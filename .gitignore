@@ -1,0 +1,14 @@
+# macOS junk
+.DS_Store
+
+# Thumbnails and caches
+._*
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.bak
+*.tmp
