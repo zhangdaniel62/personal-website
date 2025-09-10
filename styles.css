@@ -1,0 +1,42 @@
+/*
+    fonts used 
+*/  
+/* General text - Noto Sans */
+.noto-sans-regular-400 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 
+    "wdth" 100;
+}
+ 
+/* Subheadings - Noto Sans Medium */
+.noto-sans-regular-500 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+ 
+/* Headings - Noto Sans SemiBold */
+.noto-sans-semiBold-600 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: 
+    "wdth" 100;
+}
+
+/* Name - Noto Sans Black */
+.noto-sans-black-900 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
