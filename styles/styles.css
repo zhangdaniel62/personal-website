@@ -118,6 +118,9 @@ body {
   position: sticky;
   bottom: 1.5rem;
   background: white;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
   
 }
 /* #endregion Navbar */
