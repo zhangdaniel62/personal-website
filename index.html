@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <!-- import font used -->
@@ -10,7 +10,7 @@
     />
 
     <link id="style1" rel="stylesheet" href="./styles/styles.css" />
-    
+
     <title>Home</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -18,9 +18,11 @@
 
   <body>
     <!-- Nav Bar-->
-    <nav>
-      <div>
-        <a href="index.html">Daniel Zhang</a>
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="qualifications.html">Qualifications</a>
@@ -34,20 +36,20 @@
       </div>
 
       <!-- Projects -->
-      <div>
+      <div class="navbar-items">
         <div>
           <h3>
-            <button>Projects</button>
+            Projects
           </h3>
         </div>
         <a href="https://aggieseek.net/">Aggieseek</a>
       </div>
 
       <!-- Contact -->
-      <div>
+      <div div class="navbar-items">
         <div>
           <h3>
-            <button>Contact</button>
+            Contact
           </h3>
         </div>
         <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
@@ -57,13 +59,13 @@
         <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
       </div>
 
-      <div>
+      <div class="navbar-theme-button navbar-items">
         <button>Change Styles</button>
       </div>
     </nav>
 
     <!-- Main Area -->
-    <div>
+    <div class="content">
       <main>
         <!-- Introduction -->
         <section>
