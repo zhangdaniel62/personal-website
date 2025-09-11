@@ -42,7 +42,7 @@
 
 body {
   display: grid;
-  grid-template-columns: 20% 1fr;
+  grid-template-columns: 20% 80%;
   min-height: 100vh;
   margin: 0;
   font-family: "Noto Sans", sans-serif;
@@ -50,6 +50,7 @@ body {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+  overflow-x: hidden;
 }
 
 /* #region Navbar */
@@ -120,3 +121,63 @@ body {
   
 }
 /* #endregion Navbar */
+
+/* #region Main Area */
+.main-area {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  overflow: auto;
+}
+/* #region Introduction Section */
+#introduction {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 5rem;
+}
+#introduction h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0rem;
+}
+
+#introduction p {
+  font-size: 0.8rem;
+  color: grey;
+  margin-top:0%;
+  margin-bottom: 0rem;
+}
+
+#introduction-div {
+  padding: 0rem 23rem 0rem 1rem;
+
+}
+
+#introduction img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin-top: 1rem;
+  align-self:flex-end;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* #endregion Introduction Section */
+
+#section-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 1rem;
+  padding-top: 3rem;
+
+}
+
+#section-header h2 {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+/* #endregion Main Area */
+
