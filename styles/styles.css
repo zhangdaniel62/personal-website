@@ -140,7 +140,7 @@ input[type="reset"] {
   margin-left: calc(var(--nav-width) + var(--nav-gutter));
   padding: 2rem;
   background-color: #f9f9f9;
-  overflow: auto;
+  min-height: 100svh;
 }
 /* #region Introduction Section */
 #introduction {
@@ -263,8 +263,17 @@ input[type="reset"] {
   font-size:small;
 }
 
+.portfolio-items {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start; /* or center if you want them aligned vertically */
+  margin-top: 2rem;
+}
+
 .portfolio-items-desc {
   display: flex;
+  flex: 1;
   flex-direction: column;
   background-color: white;
   padding: 1rem; /* 16px */
@@ -315,5 +324,38 @@ input[type="reset"] {
   font-size: 1rem;
   color: grey;
   font-size: small;
+}
+
+.portfolio-items-images {
+  display: flex;
+  flex: 2;
+  gap: 1rem; 
+  padding-top: 1rem; /* 16px */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.5rem; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  justify-content: center;
+  overflow:hidden;
+  width: 66.6667%;
+
+}
+
+.bg-aggieseek {
+  background-color: rgb(219, 151, 140);
+}
+
+.aggieseek-img-left {
+  margin-left: -2rem; 
+}
+
+.aggieseek-img-right {
+  margin-right: -2rem; 
+}
+
+.aggieseek-img {
+  height: auto;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
 }
 /* #endregion Main Area */
