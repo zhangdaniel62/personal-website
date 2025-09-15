@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- import font used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link id="style1" rel="stylesheet" href="./styles/styles.css" />
+
     <title>About</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
   </head>
   <body>
-    <nav>
-      <div>
-        <a href="index.html">Daniel Zhang</a>
+    <!-- Nav Bar-->
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
-        <a href="qualifications.html">About</a>
+        <a href="qualifications.html">Qualifications</a>
         <a
           href="https://drive.google.com/file/d/1X3erKgoFyPzxxGyf18mxpIo1Z752vQ_M/view?usp=sharing"
           target="_blank"
@@ -22,44 +37,49 @@
       </div>
 
       <!-- Projects -->
-      <div>
+      <div class="navbar-items">
         <div>
-          <h3>
-            <button>Projects</button>
-          </h3>
+          <h3>Projects</h3>
         </div>
-        <a href="https://aggieseek.net/">Aggieseek</a>
+        <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
       </div>
 
       <!-- Contact -->
-      <div>
+      <div div class="navbar-items">
         <div>
-          <h3>
-            <button>Contact</button>
-          </h3>
+          <h3>Contact</h3>
         </div>
-        <a href="mailto:zhangdaniel62@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/zhangdaniel62/">LinkedIn</a>
-        <a href="https://github.com/zhangdaniel62">GitHub</a>
+        <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
+        <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
       </div>
 
-      <div>
+      <div class="navbar-theme-button">
         <button>Change Styles</button>
       </div>
     </nav>
 
     <!-- Main Area -->
     <div>
-      <main>
+      <main class="main-area">
         <!-- Introduction -->
         <section>
-          <div>
-            <h1>Hello, I'm Daniel!</h1>
-            <div>
-              <p>Software Engineer</p>
-              <p>Texas A&M University</p>
+          <div id="introduction">
+            <div id="introduction-div">
+              <h1>Hello, I'm Daniel!</h1>
+              <div>
+                <p>Software Engineer</p>
+                <p>Texas A&M University</p>
+              </div>
             </div>
-            <p>
+            <img
+              src="./assets/images/daniel_zhang_headshot.jpg"
+              alt="Headshot of Daniel Zhang"
+            />
+          </div>
+          <p>
               Hello! My name is Daniel Zhang. I am currently a junior at Texas
               A&M University, pursuing a degree in Computer Science, as well as
               minors in math and statistics. My passion involves creating and
@@ -89,16 +109,11 @@
               skills as a software developer and continue to grow while making
               an impact. Feel free to reach out to me!
             </p>
-          </div>
-          <img
-            src="./assets/images/daniel_zhang_headshot.jpg"
-            alt="Headshot of Daniel Zhang"
-          />
         </section>
 
         <!-- Current Postions -->
-        <section id="current_positions">
-          <div>
+        <section id="current_positions section">
+          <div id="section-header">
             <h2>Current Positions</h2>
           </div>
           <div>
@@ -130,8 +145,8 @@
         </section>
 
         <!-- Relevant Coursework-->
-        <section id="relevant_coursework">
-          <div>
+        <section id="relevant_coursework section">
+          <div id="section-header">
             <h2>Relevant Coursework</h2>
           </div>
           <div>
@@ -149,7 +164,7 @@
         </section>
 
         <!-- Skills -->
-        <section id="skills">
+        <section id="skills section">
           <div>
             <h2>Skills</h2>
           </div>
