@@ -56,8 +56,22 @@
       </div>
 
       <div class="navbar-theme-button">
-        <button>Change Styles</button>
+        <button onClick="toggleTheme()">Change Styles</button>
       </div>
+
+      <script>
+        function toggleTheme() {
+          // Select link element
+          let theme = document.getElementById("style1");
+
+          // Toggle between light and dark mode
+          if (theme.getAttribute("href") == "./styles/styles.css") {
+            theme.setAttribute("href", "./styles/dark-mode.css"); // Dark mode
+          } else {
+            theme.setAttribute("href", "./styles/styles.css"); // Light mode
+          }
+        }
+      </script>
     </nav>
 
     <!-- Main Area -->
