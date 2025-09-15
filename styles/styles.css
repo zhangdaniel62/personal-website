@@ -359,3 +359,143 @@ input[type="reset"] {
   border-top-right-radius: 5%;
 }
 /* #endregion Main Area */
+
+
+/* =======================
+   GenAI Color Generator
+   ======================= */
+
+#color-generator {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.cg-header h1 {
+  margin: 0 0 0.25rem 0;
+}
+
+.cg-sub {
+  color: grey;
+  margin: 0 0 1.25rem 0;
+  font-size: 0.95rem;
+}
+
+.cg-controls {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.75rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.cg-picker { grid-column: span 3; min-width: 180px; }
+.cg-hex    { grid-column: span 5; }
+.cg-label  { font-size: 0.85rem; color: #666; display: block; margin-bottom: 0.35rem; }
+
+.cg-color-input {
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04) inset;
+}
+
+.cg-hex-input {
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 0 0.75rem;
+  background: #fff;
+}
+
+.cg-generate {
+  grid-column: span 4;
+  height: 2.6rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,.08);
+  font-weight: 600;
+}
+.cg-generate:hover { background: #f5f5f5; }
+
+.cg-palette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.cg-swatch {
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,.06);
+}
+
+.cg-swatch-top {
+  min-height: 128px;
+  display: grid;
+  place-items: center;
+}
+
+.cg-swatch-hex {
+  padding: 0.6rem 0.8rem;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(0,0,0,.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cg-copy-btn {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  background: #fafafa;
+}
+.cg-copy-btn:hover { background: #f0f0f0; }
+
+.cg-hint {
+  color: #7a7a7a;
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+}
+
+.cg-divider {
+  border: none;
+  border-top: 1px solid #e6e6e6;
+  margin: 1.25rem 0;
+}
+
+.user-prompt {
+  background: #ffffff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.04);
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .cg-controls { grid-template-columns: 1fr 1fr; }
+  .cg-picker { grid-column: span 1; }
+  .cg-hex    { grid-column: span 1; }
+  .cg-generate { grid-column: span 2; }
+  .cg-palette { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 540px) {
+  .cg-palette { grid-template-columns: 1fr; }
+}
