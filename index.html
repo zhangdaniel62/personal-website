@@ -9,7 +9,17 @@
       rel="stylesheet"
     />
 
-    <link id="style1" rel="stylesheet" href="./styles/styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
 
     <title>Home</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
@@ -56,22 +66,8 @@
       </div>
 
       <div class="navbar-theme-button">
-        <button onClick="toggleTheme()">Change Styles</button>
+        <button id="theme-toggle-btn">Change Styles</button>
       </div>
-
-      <script>
-        function toggleTheme() {
-          // Select link element
-          let theme = document.getElementById("style1");
-
-          // Toggle between light and dark mode
-          if (theme.getAttribute("href") == "./styles/styles.css") {
-            theme.setAttribute("href", "./styles/dark-mode.css"); // Dark mode
-          } else {
-            theme.setAttribute("href", "./styles/styles.css"); // Light mode
-          }
-        }
-      </script>
     </nav>
 
     <!-- Main Area -->
@@ -189,5 +185,7 @@
         </section>
       </main>
     </div>
+
+    <script src="./scripts/toggle-theme.js" defer></script>
   </body>
 </html>
