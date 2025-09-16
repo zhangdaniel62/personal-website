@@ -12,7 +12,17 @@
       rel="stylesheet"
     />
     
-    <link id="style1" rel="stylesheet" href="./styles/styles.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
     
     <title>Document</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
@@ -61,7 +71,7 @@
       </div>
 
       <div class="navbar-theme-button">
-        <button>Change Styles</button>
+        <button id="theme-toggle-btn">Change Styles</button>
       </div>
     </nav>
 
@@ -130,5 +140,8 @@
           </p>
       </section>
     </main>
+
+    <!-- Toggle Theme Script-->
+    <script src="./scripts/toggle-theme.js" defer></script>
   </body>
 </html>

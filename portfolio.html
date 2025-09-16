@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- import font used -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +12,18 @@
       rel="stylesheet"
     />
 
-    <link id="style1" rel="stylesheet" href="./styles/styles.css" />
-    
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
+
     <title>Portfolio</title>
     <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
   </head>
@@ -39,9 +49,7 @@
       <!-- Projects -->
       <div class="navbar-items">
         <div>
-          <h3>
-            Projects
-          </h3>
+          <h3>Projects</h3>
         </div>
         <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
       </div>
@@ -49,9 +57,7 @@
       <!-- Contact -->
       <div div class="navbar-items">
         <div>
-          <h3>
-            Contact
-          </h3>
+          <h3>Contact</h3>
         </div>
         <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
         <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
@@ -61,7 +67,7 @@
       </div>
 
       <div class="navbar-theme-button">
-        <button>Change Styles</button>
+        <button id="theme-toggle-btn">Change Styles</button>
       </div>
     </nav>
 
@@ -87,7 +93,9 @@
                 </p>
               </div>
               <button class="portfolio-button">
-                <a href="https://aggieseek.net/" target="_blank">View Project</a>
+                <a href="https://aggieseek.net/" target="_blank"
+                  >View Project</a
+                >
               </button>
             </div>
             <div class="portfolio-items-images bg-aggieseek">
@@ -110,5 +118,8 @@
         </section>
       </main>
     </div>
+
+    <!-- Toggle Theme Script -->
+    <script src="./scripts/toggle-theme.js" defer></script>
   </body>
 </html>
