@@ -358,6 +358,18 @@ input[type="reset"] {
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
 }
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: black;          
+  text-decoration: none;
+}
+
+a:hover {
+  color: lightgray;
+}
 /* #endregion Main Area */
 
 
