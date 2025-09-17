@@ -235,4 +235,18 @@ nav {
   }
 }
 
+.navbar-theme-button button {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  background-color: #222222;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(117, 116, 116);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.1);
+  color: darkgrey;
+}
 /* #endregion navbar */
