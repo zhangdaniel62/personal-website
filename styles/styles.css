@@ -133,6 +133,60 @@ input[type="reset"] {
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Sidebar dropdowns (Projects/Contact) */
+.dropdown {
+  position: relative; /* keep static flow in sidebar */
+}
+
+.dropdown-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: space-between;
+  padding-top:1rem;
+}
+
+.caret-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: grey;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0 0 2px; /* tiny left spacing from text */
+  margin: 0;
+}
+.caret-btn:hover { color: #666; }
+.caret-btn:focus { outline: 1px solid #bbb; outline-offset: 2px; }
+
+/* Optional: ensure the <h3> itself has no extra bottom margin */
+.dropdown-label h3 { margin: 0; line-height: 1; }
+
+/* remove pseudo-caret; we use a real button now */
+.dropdown-label h3::after { content: none; }
+
+/* In the sidebar, just reveal items below; no absolute positioning */
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0 0.25rem 0;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-label:hover + .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: flex; /* show on hover/focus */
+}
+
+/* Optional: make nested links feel like part of the list */
+.dropdown-menu a {
+  padding-left: 0.25rem;
+}
 /* #endregion Navbar */
 
 /* #region Main Area */

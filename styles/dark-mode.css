@@ -1,0 +1,238 @@
+/* #region Fonts */  
+/* General text - Noto Sans */
+.noto-sans-regular-400 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: 
+    "wdth" 100;
+}
+ 
+/* Subheadings - Noto Sans Medium */
+.noto-sans-regular-500 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+ 
+/* Headings - Noto Sans SemiBold */
+.noto-sans-semiBold-600 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: 
+    "wdth" 100;
+}
+
+/* Name - Noto Sans Black */
+.noto-sans-black-900 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+/* #endregion Fonts */
+
+a,
+a:link,
+a:visited,
+a:active {
+  color: lightgrey;          
+  text-decoration: none;
+}
+
+a:hover {
+  color: grey;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  overflow-x: hidden;
+  background-color: #222222;
+  color: #ffffff;
+}
+
+
+/* #regions navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111; /* slightly lighter than pure black */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.navbar-main-links,
+.navbar-items,
+.navbar-theme-button {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-right: 2rem;
+  color: #fff;
+}
+
+nav a {
+  color: #ccc;
+  font-weight: 500;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.navbar-items h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #aaa;
+  margin-right: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Dropdowns */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: default; /* label is static; hover triggers the menu */
+}
+
+.caret-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0 0 2px; /* tiny left spacing from text */
+  margin: 0;
+}
+.caret-btn:hover { color: #bbb; }
+.caret-btn:focus { outline: 1px solid #555; outline-offset: 2px; }
+
+/* Optional caret indicator */
+
+.dropdown-label h3::after {
+  content: none; /* we now show a real caret button */
+}
+
+.dropdown-label h3 {
+  margin: 0;            /* eliminate bottom gap that caused hover flicker */
+  line-height: 1;       /* tighter box to keep menu flush */
+}
+
+.caret-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.caret-btn:focus {
+  outline: 1px solid #555;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: 0.5rem 0.25rem;
+  background: #131313;
+  border: 1px solid #2e2e2e;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 1000;
+  flex-direction: column;
+  margin-top: 6px; /* small gap for hover comfort */
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-label:hover + .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: #1f1f1f;
+  border-bottom: none; /* override base hover underline */
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-items {
+    margin-top: 0.5rem;
+  }
+
+}
+
+/* Prevent navbar from overflowing horizontally */
+nav {
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  overflow: visible;        /* allow dropdowns to extend outside the nav */
+}
+.navbar-main-links,
+.navbar-items,
+.navbar-theme-button {
+  min-width: 0;
+}
+
+/* Ensure content clears the fixed navbar */
+.content {
+  padding-top: 64px; /* adjust if your nav is taller */
+}
+
+/* Adjust spacing on medium screens */
+@media (max-width: 1024px) {
+  nav {
+    gap: 0.75rem;
+  }
+}
+
+/* #endregion navbar */
