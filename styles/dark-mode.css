@@ -40,6 +40,10 @@
 }
 /* #endregion Fonts */
 
+:root {
+  --nav-h: 64px; /* match your current nav height */
+}
+
 a,
 a:link,
 a:visited,
@@ -65,13 +69,12 @@ body {
   color: #ffffff;
 }
 
-
-/* #regions navbar */
+/* #region navbar */
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #111; /* slightly lighter than pure black */
+  background: #111; 
   color: white;
   display: flex;
   justify-content: space-between;
@@ -124,7 +127,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  cursor: default; /* label is static; hover triggers the menu */
+  cursor: default; 
 }
 
 .caret-btn {
@@ -137,21 +140,20 @@ nav a:hover {
   font-size: 0.9rem;
   line-height: 1;
   cursor: pointer;
-  padding: 0 0 0 2px; /* tiny left spacing from text */
+  padding: 0 0 0 2px; 
   margin: 0;
 }
 .caret-btn:hover { color: #bbb; }
 .caret-btn:focus { outline: 1px solid #555; outline-offset: 2px; }
 
-/* Optional caret indicator */
 
 .dropdown-label h3::after {
-  content: none; /* we now show a real caret button */
+  content: none; 
 }
 
 .dropdown-label h3 {
-  margin: 0;            /* eliminate bottom gap that caused hover flicker */
-  line-height: 1;       /* tighter box to keep menu flush */
+  margin: 0;           
+  line-height: 1;      
 }
 
 .caret-btn {
@@ -180,7 +182,7 @@ nav a:hover {
   box-shadow: none;
   z-index: 1000;
   flex-direction: column;
-  margin-top: 6px; /* small gap for hover comfort */
+  margin-top: 6px; 
 }
 
 .dropdown:hover .dropdown-menu,
@@ -197,7 +199,7 @@ nav a:hover {
 
 .dropdown-menu a:hover {
   background: #1f1f1f;
-  border-bottom: none; /* override base hover underline */
+  border-bottom: none; 
 }
 
 @media (max-width: 768px) {
@@ -208,14 +210,13 @@ nav a:hover {
   .navbar-items {
     margin-top: 0.5rem;
   }
-
 }
 
 /* Prevent navbar from overflowing horizontally */
 nav {
   box-sizing: border-box;
   flex-wrap: wrap;
-  overflow: visible;        /* allow dropdowns to extend outside the nav */
+  overflow: visible;        
 }
 .navbar-main-links,
 .navbar-items,
@@ -223,12 +224,12 @@ nav {
   min-width: 0;
 }
 
-/* Ensure content clears the fixed navbar */
+
 .content {
-  padding-top: 64px; /* adjust if your nav is taller */
+  padding-top: var(--nav-h);
 }
 
-/* Adjust spacing on medium screens */
+
 @media (max-width: 1024px) {
   nav {
     gap: 0.75rem;
@@ -250,3 +251,205 @@ nav {
   color: darkgrey;
 }
 /* #endregion navbar */
+
+/* #region General Layout */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5rem 0 1rem;
+  line-height: 1.2;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+ul, ol {
+  margin: 1rem 0 1rem 2rem;
+}
+li {
+  margin: 0.5rem 0;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+/* #endregion General Layout */
+
+/* #region Introduction Section */
+#introduction {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  padding-top: 5rem;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+#introduction h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0rem;
+}
+
+#introduction p {
+  font-size: 0.8rem;
+  color: grey;
+  margin-top:0%;
+  margin-bottom: 0rem;
+}
+
+#introduction-div {
+  padding: 0 1rem;
+  flex: 1 1 380px;
+  max-width: 680px;
+}
+
+#introduction img {
+  order:-1;
+  width: 375px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 1rem;
+  align-self:flex-end;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  flex: 0 1 360px;
+}
+
+
+
+/* #endregion Introduction Section */
+
+/* #region experience section */
+
+#section-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 1rem;
+  padding-top: 3rem;
+
+}
+
+#section-header h2 {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.experience-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid lightgrey;
+  width: 100%;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.experience-items img {
+  width: 10rem;
+  height: auto; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.experience-items .experience-items-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 0.5rem;
+  padding: 0.3rem;
+}
+.experience-items .experience-items-desc p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: grey;
+  font-size:small;
+
+}
+
+/* #endregion experience section */
+
+/* #region Projects section */
+.project-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid lightgrey;
+  width: 100%;
+  align-items: stretch;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+.project-items img {
+  width: 50%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  align-content: flex-end;
+} 
+
+.project-items .project-items-desc {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 0.5rem;
+  padding: 3rem;
+  flex: 1;
+}
+
+.project-items .project-items-desc p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: grey;
+  font-size:small;
+}
+/* #endregion Projects section */
+
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Offset for in-page anchors so they don't hide under the fixed navbar */
+:target {
+  scroll-margin-top: var(--nav-h);
+}
+
+@media (max-width: 768px) {
+  #introduction {
+    flex-direction: column;
+    align-items: center;
+  }
+  #introduction-div {
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+}
