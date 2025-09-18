@@ -233,18 +233,28 @@ input[type="reset"] {
 
 #section-header {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  border-bottom: 2px solid lightgrey;
-  margin-bottom: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto 1.75rem;
   padding-top: 3rem;
+  width: 100%;
+  text-align: center;
+}
 
+#section-header::after {
+  content: "";
+  display: block;
+  width: min(560px, 85%);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
 }
 
 #section-header h2 {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
+  margin: 0;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .experience-items {
@@ -280,6 +290,127 @@ input[type="reset"] {
   font-size:small;
 
 }
+
+/* #region Qualifications page */
+.qualifications-section {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+
+#resume.qualifications-section {
+  max-width: 1120px;
+}
+
+.qualifications-section .section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 auto 1.75rem;
+  padding-top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.qualifications-section .section-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1f1f1f;
+}
+
+.qualifications-section .section-header::after {
+  content: "";
+  display: block;
+  width: min(560px, 85%);
+  height: 2px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+
+.qualifications-section .section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.qualifications-section .qualifications-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.qualifications-section .role-list li {
+  list-style: disc;
+}
+
+.qualifications-section .role-list h3 {
+  margin: 0 0 0.5rem;
+}
+
+.qualifications-section .role-list p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.qualifications-section .coursework-list {
+  list-style: disc outside;
+}
+
+.qualifications-section .skills-list strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.qualifications-section .skills-list a {
+  color: #1f4fb8;
+}
+
+.qualifications-section .skills-list a:hover {
+  color: #0f2f7c;
+}
+
+.qualifications-section .resume-embed object {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8.5 / 11;
+  min-height: 960px;
+}
+
+.qualifications-section .resume-embed p {
+  color: #444444;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .qualifications-section {
+    padding: 0 1rem;
+  }
+
+  .qualifications-section .section-header::after {
+    width: 90%;
+  }
+
+  .qualifications-section .resume-embed object {
+    min-height: 640px;
+    aspect-ratio: 8.5 / 13;
+  }
+
+  #section-header::after {
+    width: 90%;
+  }
+}
+/* #endregion Qualifications page */
+
 .project-items {
   display: flex;
   flex-direction: row;
