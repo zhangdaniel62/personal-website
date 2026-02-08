@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- import font used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
+
+    <title>Home</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  </head>
+
+  <body>
+    <!-- Nav Bar-->
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a
+          href="https://drive.google.com/file/d/1X3erKgoFyPzxxGyf18mxpIo1Z752vQ_M/view?usp=sharing"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="service.html">Service</a>
+        <a href="genai.html">GenAI</a>
+      </div>
+
+      <!-- Projects dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Projects</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
+        </div>
+      </div>
+
+      <!-- Contact dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Contact</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
+          <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="navbar-theme-button">
+        <button id="theme-toggle-btn">Change Styles</button>
+      </div>
+    </nav>
+
+    <!-- Main Area -->
+    <div class="content">
+      <main class="main-area">
+        <!-- Introduction -->
+        <section id="introduction">
+          <div id="introduction-div">
+            <h1>Hello, I'm Daniel!</h1>
+            <div>
+              <p>Software Engineer</p>
+              <p>Texas A&M University</p>
+            </div>
+          </div>
+          <img
+            src="./assets/images/daniel_zhang_headshot.jpg"
+            alt="Headshot of Daniel Zhang"
+          />
+        </section>
+
+        <!-- Experience -->
+        <section id="experience section">
+          <div id="section-header">
+            <h2>Experience</h2>
+          </div>
+          <!-- SWE @ Humana -->
+          <div class="experience-items">
+            <img src="./assets/images/humana_logo.png" alt="Humana Logo" />
+            <div class="experience-items-desc">
+              <div>
+                <h3>Software Engineering Intern at Humana</h3>
+              </div>
+              <div>
+                <p>May 2025 - Present</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Treasurer @ TAMU Badminton Club-->
+          <div class="experience-items">
+            <img
+              src="./assets/images/tamu_badminton_club_logo.png"
+              alt="TAMU Badminton Club Logo"
+            />
+            <div class="experience-items-desc">
+              <div>
+                <h3>Treasurer at TAMU Badminton Club</h3>
+              </div>
+              <div>
+                <p>August 2024 - Present</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Manager @ Aggie Coding Club -->
+          <div class="experience-items">
+            <img
+              src="./assets/images/acc_logo.png"
+              alt="Aggie Coding Club Logo"
+            />
+            <div class="experience-items-desc">
+              <div>
+                <h3>Project Manager at Aggie Coding Club</h3>
+              </div>
+              <div>
+                <p>August 2024 - May 2025</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section id="tech_stack section">
+          <div id="section-header">
+            <h2>Tech Stack</h2>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <strong>Languages:</strong> Python, C/C++, Java, Haskell, SQL,
+                JavaScript, TypeScript, HTML, CSS
+              </li>
+              <li>
+                <strong>Frameworks:</strong> PostgreSQL, React, Tailwind CSS,
+                Node.js, Flask, React Native
+              </li>
+              <li>
+                <strong>Developer Tools:</strong> Git, Azure DevOps VS Code,
+                PyCharm, IntelliJ, Eclipse, JIRA, Postman
+              </li>
+              <li><strong>Libraries:</strong> pandas, NumPy, Matplotlib</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects section">
+          <div id="section-header">
+            <h2>Projects</h2>
+          </div>
+          <div class="project-items">
+            <div class="project-items-desc">
+              <div>
+                <h3>AggieSeek</h3>
+              </div>
+              <div>
+                <p>2024 -</p>
+              </div>
+            </div>
+            <img
+              src="./assets/images/aggieseek-on-computer.png"
+              alt="Screenshot of Aggieseek app on computer"
+            />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Toggle theme script -->
+    <script src="./scripts/toggle-theme.js" defer></script>
+  </body>
+</html>

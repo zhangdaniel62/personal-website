@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- import font used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
+
+    <title>Document</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Nav Bar-->
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a
+          href="https://drive.google.com/file/d/1X3erKgoFyPzxxGyf18mxpIo1Z752vQ_M/view?usp=sharing"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="service.html">Service</a>
+        <a href="genai.html">GenAI</a>
+      </div>
+
+      <!-- Projects dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Projects</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
+        </div>
+      </div>
+
+      <!-- Contact dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Contact</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
+          <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="navbar-theme-button">
+        <button id="theme-toggle-btn">Change Styles</button>
+      </div>
+    </nav>
+
+    <!-- Main Area -->
+    <main class="main-area">
+      <div>
+        <h1>Service</h1>
+      </div>
+      <section class="service-items">
+        <div>
+          <h2>
+            <a href="https://www.aggiecodingclub.com/"
+              >Aggie Coding Club Project Manager</a
+            >
+          </h2>
+          <p>
+            When first arriving at Texas A&M, I was looking into opportunities
+            to connect and get involved with my peers in meaningful project and
+            to simultaneously learn more about development to further my
+            knowledge about computer science. I found that Aggie Coding Club was
+            a great method for me to not only grow as a programmer but also
+            offered the opportunity for me to work on teams that produced
+            applications that were used on a daily basis by others.
+            <br /><br />
+            As a project manager, I was responsible for leading a team of
+            developers to create a web application that would allow students to
+            find study partners for their classes. This application, AggieSeek,
+            was created to help students connect with others in their classes to
+            facilitate group study sessions and collaborative learning. My role
+            as a project manager involved coordinating the efforts of the team,
+            setting deadlines, and ensuring that the project was completed on
+            time and to a high standard. I also worked closely with the team to
+            ensure that everyone was on the same page and that any issues or
+            challenges were addressed promptly.
+            <br /><br />
+            It was a rewarding experience to see the project come to fruition
+            and to know that it was helping students connect and succeed in
+            their studies. Overall, my time as a project manager for Aggie
+            Coding Club was a valuable learning experience that helped me
+            develop my leadership and teamwork skills while also allowing me to
+            contribute to a meaningful project.
+          </p>
+        </div>
+        <div>
+          <h2>
+            <a href="https://www.instagram.com/tamu_badminton/?hl=en">Texas A&M Badminton Club Treasurer and Systems Administrator</a>
+          </h2>
+          <p>
+            As Treasurer and Systems Administrator for the Texas A&M Badminton
+            Club, I played a central role in both the financial and technical
+            operations of one of the largest student organizations on campus. My
+            work focused on creating sustainable systems that streamlined how
+            the club handled its finances and tracked its members.
+            <br /><br />
+            I developed a custom in-house application that allowed officers to
+            manage cash flow, dues collection, and administrative tasks more
+            efficiently, replacing outdated manual processes. To support this, I
+            implemented a relational database management system using SQL,
+            ensuring prompt and accurate storage and retrieval of key
+            information such as payments, attendance, and membership status.
+            <br /><br />
+            I collaborated with experienced database professionals and senior
+            club officers to confirm that the system was both reliable and easy
+            to use, focusing on accessibility for non-technical leaders. Through
+            this collaboration, the application grew into a dependable tool that
+            supported daily operations and long-term planning.
+            <br /><br />
+            During deployment, the system successfully facilitated the
+            management of hundreds of active members, providing real-time
+            updates on membership status and eligibility for tournaments,
+            events, and practices. This ensured that leadership always had
+            accurate, up-to-date information and allowed the club to operate
+            more smoothly and transparently. Overall, my experience in this role
+            gave me the opportunity to apply technical skills to a real-world
+            setting while contributing meaningfully to the success of the
+            organization.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toggle Theme Script-->
+    <script src="./scripts/toggle-theme.js" defer></script>
+  </body>
+</html>

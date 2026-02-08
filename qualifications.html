@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- import font used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme") || "light";
+        const href =
+          saved === "dark" ? "./styles/dark-mode.css" : "./styles/styles.css";
+        document.write(
+          '<link id="style-element" rel="stylesheet" href="' + href + '">'
+        );
+      })();
+    </script>
+    <!-- <link id="style1" rel="stylesheet" href="./styles/styles.css" /> -->
+
+    <title>About</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Nav Bar-->
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a
+          href="https://drive.google.com/file/d/1X3erKgoFyPzxxGyf18mxpIo1Z752vQ_M/view?usp=sharing"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="service.html">Service</a>
+        <a href="genai.html">GenAI</a>
+      </div>
+
+      <!-- Projects dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Projects</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
+        </div>
+      </div>
+
+      <!-- Contact dropdown -->
+      <div class="navbar-items dropdown">
+        <div class="dropdown-label">
+          <h3>Contact</h3>
+          <button class="caret-btn" aria-haspopup="true" aria-expanded="false">
+            &#9662;
+          </button>
+        </div>
+        <div class="dropdown-menu">
+          <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
+          <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="navbar-theme-button">
+        <button id="theme-toggle-btn">Change Styles</button>
+      </div>
+    </nav>
+
+    <!-- Main Area -->
+      <main class="main-area content">
+        <!-- Introduction -->
+        <section>
+          <div id="introduction">
+            <div id="introduction-div">
+              <h1>Hello, I'm Daniel!</h1>
+              <div>
+                <p>Software Engineer</p>
+                <p>Texas A&M University</p>
+              </div>
+            </div>
+            <img
+              src="./assets/images/daniel_zhang_headshot.jpg"
+              alt="Headshot of Daniel Zhang"
+            />
+          </div>
+          <p>
+            Hello! My name is Daniel Zhang. I am currently a junior at Texas A&M
+            University, pursuing a degree in Computer Science, as well as minors
+            in math and statistics. My passion involves creating and coding
+            unique solutions to problems or tasks that could potentially help in
+            people's everyday lives. This drove me towards software development
+            and data science, resulting in a major in Computer Science. Computer
+            Science has the power to transform how tasks are handled, providing
+            solutions to repetitive tasks that prevent people from more
+            important projects while shaping how I approach problems from an
+            analytical perspective.
+            <br /><br />
+            Throughout my time at Texas A&M University, I have had the
+            opportunity to work on many personal projects, providing me vital
+            experiences and the chance to work with other software developers.
+            It has pushed me to learn essential frameworks and languages that
+            are used consistently in the industry. As a Project Manager for the
+            Aggie Coding Club and a Systems Administrator for the Texas A&M
+            Badminton Club, I have realized the importance of collaborating with
+            fellow students to achieve goals that would be hard to achieve
+            otherwise. With these experiences as well as my experience in the
+            industry, I have multiple technical areas of interest, which
+            include: CICD, backend development, cloud computing, and machine
+            learning.
+            <br /><br />
+            I am excited to continue to grow as a student and a coder by
+            exploring opportunities offered in the industry to leverage my
+            skills as a software developer and continue to grow while making an
+            impact. Feel free to reach out to me!
+          </p>
+        </section>
+
+        <!-- Current Positions -->
+        <section id="current-positions" class="qualifications-section">
+          <div class="section-header">
+            <h2>Current Positions</h2>
+          </div>
+          <div class="section-body">
+            <ul class="qualifications-list role-list">
+              <li>
+                <h3>
+                  <a href="https://www.humana.com/"
+                    >Humana - Software Engineering Intern</a
+                  >
+                </h3>
+                <p>
+                  Developed automation tools that saved over 600 hours of manual
+                  effort, migrated 1,300 pipelines to
+                  <a
+                    href="https://www.ibm.com/think/topics/yaml"
+                    target="_blank"
+                    rel="noopener"
+                    >YAML</a
+                  >
+                  to improve
+                  <a
+                    href="https://about.gitlab.com/topics/ci-cd/cicd-pipeline/"
+                    target="_blank"
+                    >CI/CD</a
+                  >
+                  , built a full-stack meeting summarization app with GPT-4o
+                  mini, and collaborated in a
+                  <a href="https://framework.scaledagile.com/" target="_blank"
+                    >SAFe Agile environment</a
+                  >
+                  across multiple sprint cycles.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Relevant Coursework-->
+        <section id="relevant-coursework" class="qualifications-section">
+          <div class="section-header">
+            <h2>Relevant Coursework</h2>
+          </div>
+          <div class="section-body">
+            <ul class="qualifications-list coursework-list">
+              <li>Design and Analysis of Algorithms</li>
+              <li>
+                Computer Systems (OS interfaces, IPC, network programming)
+              </li>
+              <li>Computational Data Science</li>
+              <li>Discrete Mathematics</li>
+              <li>Linear Algebra</li>
+              <li>Differential Equations</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="qualifications-section">
+          <div class="section-header">
+            <h2>Skills</h2>
+          </div>
+          <div class="section-body">
+            <ul class="qualifications-list skills-list">
+              <li>
+                <strong>Languages:</strong>
+                <a href="https://www.python.org/" target="_blank">Python</a>,
+                <a href="https://isocpp.org/" target="_blank">C/C++</a>,
+                <a href="https://www.oracle.com/java/" target="_blank">Java</a>,
+                <a href="https://www.haskell.org/" target="_blank">Haskell</a>,
+                <a
+                  href="https://www.iso.org/standard/63555.html"
+                  target="_blank"
+                  >SQL</a
+                >,
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                  target="_blank"
+                  >JavaScript</a
+                >,
+                <a href="https://www.typescriptlang.org/" target="_blank"
+                  >TypeScript</a
+                >,
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+                  target="_blank"
+                  >HTML</a
+                >,
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                  target="_blank"
+                  >CSS</a
+                >
+              </li>
+              <li>
+                <strong>Frameworks:</strong> PostgreSQL, React, Tailwind CSS,
+                Node.js, Flask, React Native
+              </li>
+              <li>
+                <strong>Developer Tools:</strong> Git, Azure DevOps, VS Code,
+                PyCharm, IntelliJ, Eclipse, JIRA, Postman
+              </li>
+              <li><strong>Libraries:</strong> pandas, NumPy, Matplotlib</li>
+            </ul>
+          </div>
+        </section>
+        <section id="resume" class="qualifications-section">
+          <div class="section-header">
+            <h2>Resume (PDF)</h2>
+          </div>
+          <div class="section-body resume-embed">
+            <!-- Embedded PDF with fallback link -->
+            <object
+              data="./assets/docs/Daniel_Zhang_Resume_Fall_25.pdf"
+              type="application/pdf"
+              width="100%"
+              height="800"
+            >
+              <p>
+                Your browser can't display PDFs inline.
+                <a
+                  href="./assets/docs/Daniel_Zhang_Resume_Fall_25.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  >Open the PDF</a
+                >
+                or
+                <a href="./assets/docs/Daniel_Zhang_Resume_Fall_25.pdf" download
+                  >download it</a
+                >.
+              </p>
+            </object>
+          </div>
+        </section>
+      </main>
+
+    <!-- Toggle Theme Script -->
+    <script src="./scripts/toggle-theme.js" defer></script>
+  </body>
+</html>

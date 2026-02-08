@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- import font used -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Light (default) -->
+    <link id="style1" rel="stylesheet" href="./styles/styles.css" />
+    <title>GenAI — Color Palette Generator</title>
+    <link rel="icon" href="./assets/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Nav Bar (unchanged) -->
+    <nav class="navbar">
+      <div class="navbar-main-links">
+        <a href="index.html" class="navbar-logo noto-sans-black-900"
+          >Daniel Zhang</a
+        >
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="qualifications.html">Qualifications</a>
+        <a
+          href="https://drive.google.com/file/d/1X3erKgoFyPzxxGyf18mxpIo1Z752vQ_M/view?usp=sharing"
+          target="_blank"
+          >Resume</a
+        >
+        <a href="service.html">Service</a>
+        <a href="genai.html" aria-current="page">GenAI</a>
+      </div>
+
+      <!-- Projects -->
+      <div class="navbar-items">
+        <div>
+          <h3>Projects</h3>
+        </div>
+        <a href="https://aggieseek.net/" target="_blank">Aggieseek</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="navbar-items">
+        <div>
+          <h3>Contact</h3>
+        </div>
+        <a href="mailto:zhangdaniel62@gmail.com" target="_blank">Email</a>
+        <a href="https://www.linkedin.com/in/zhangdaniel62/" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/zhangdaniel62" target="_blank">GitHub</a>
+      </div>
+
+      <div class="navbar-theme-button">
+        <button id="themeToggleBtn" aria-pressed="false" aria-label="Change theme">
+          Change Styles
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Area -->
+    <main class="main-area">
+      <section id="color-generator" aria-labelledby="cg-title">
+        <header class="cg-header">
+          <h1 id="cg-title" class="noto-sans-semiBold-600">Palette Generator</h1>
+          <p class="cg-sub">Generate four matching/complementary colors. Pick a seed color or let it be random.</p>
+        </header>
+
+        <div class="cg-controls" role="group" aria-label="Color generator controls">
+          <div class="cg-picker">
+            <label for="seedColor" class="cg-label">Seed color</label>
+            <input id="seedColor" class="cg-color-input" type="color" value="#5a67d8" />
+          </div>
+
+          <div class="cg-hex">
+            <label for="seedHex" class="cg-label">Hex</label>
+            <input id="seedHex" class="cg-hex-input" type="text" value="#5a67d8" maxlength="7" />
+          </div>
+
+          <button id="generateBtn" class="cg-generate" type="button">
+            Generate
+          </button>
+        </div>
+
+        <div id="palette" class="cg-palette" aria-live="polite" aria-atomic="true">
+          <!-- swatches injected by JS -->
+        </div>
+
+        <p class="cg-hint">Tip: click any swatch to copy its hex code.</p>
+
+        <hr class="cg-divider" />
+
+        <!-- Your exact prompt text below the picker -->
+        <div class="user-prompt">
+          <p>
+            take this navbar that is already good and then create a custom color picker that when you click generate it automatically generates four colors that match (or complement) one another. Make sure that it give different colors every time that you click on the button to generate it and also make sure to include functionality and necessary files to create this page, whether that be HTML, js, or CSS so that I can add it. The theme of the page should be light mode and generally pretty monochrome other than the actual color. Make a gark mode version too that I can put in in a different CSS file that I will be switching to with javascript. In addition, make sure to include my prompt below the color picker with the exact text that I have here. My page that I plan to put this on is called genai.html for the HTML file and the file that I currently have for light mode styling is called styles.css
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Script -->
+    <script src="./scripts/genai.js"></script>
+  </body>
+</html>
