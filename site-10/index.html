@@ -7,62 +7,45 @@
       content="width=device-width, 
                    initial-scale=1.0"
     />
-    <title>Google Chrome Template</title>
+    <title>Search Engine</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
   </head>
 
   <body>
-    <!-- Navigation Section -->
     <nav class="site-navigation">
       <div class="header-container">
-        <a href="#" class="nav-link"> Gmail </a>
-        <a href="#" class="nav-link"> Images </a>
-        <a href="">
-          <i class="fa fa-solid fa-flask myflask"></i>
-        </a>
         <button class="sign-in-btn">Sign in</button>
       </div>
     </nav>
 
-    <!-- Main Content Section -->
     <main>
       <img id="dz_logo" src="/images/logo.png" />
 
-      <!-- Search Input Section -->
       <section class="search-input-section">
-        <div class="search-input-container">
-          <img
-            src="https://media.geeksforgeeks.org/wp-content/uploads/20240122040847/search.png"
-            alt="google-search-btn"
-            class="gsb"
-          />
-          <input
-            type="text"
-            placeholder="Search Google or type a URL"
-            class="search-input"
-          />
-        </div>
-
-        <img
-          src="https://media.geeksforgeeks.org/wp-content/uploads/20240120153531/google-voice.png"
-          alt="Google Mic"
-          class="mic-icon"
-        />
-      </section>
-
-      <!-- Buttons Section -->
-      <section class="buttons-section">
-        <button class="google-search-btn">Google Search</button>
-        <button class="feeling-lucky-btn">I'm Feeling Lucky</button>
+        <form
+          class="search-input-container"
+          action="https://www.google.com/search"
+          method="get"
+          target="_self"
+        >
+          <div class="search-input-container">
+            <button type="submit" class="icon-btn" aria-label="Search">
+              <img src="/images/search.png" alt="search-btn" class="sb" />
+            </button>
+            <input
+            name="q"
+              type="text"
+              placeholder="Search via Google"
+              class="search-input"
+              autocomplete="off"
+            />
+          </div>
+        </form>
       </section>
 
       <div class="customize_size">
         <i class="fa fa-solid fa-pen"></i>
-        Customize Chrome
+        Customize
       </div>
     </main>
   </body>
