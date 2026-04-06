@@ -1,17 +1,4 @@
----
-geometry:
-  - top=0.6in
-  - bottom=1in
-  - left=1in
-  - right=1in
-header-includes:
-  - \usepackage{graphicx}
-  - \setlength{\parskip}{0pt}
-  - \usepackage{amsmath}
-  - \usepackage{newunicodechar}
-  - \newunicodechar{⋮}{\(\vdots\)}
----
-
+![Logo](assets/images/logo.png)
 
 # Project 4: Hosting a site with HTTPS and a custom domain
 
@@ -49,7 +36,7 @@ Together, these  services allowed the website to be securely accessed through a 
 
 The following flow chart shows the order and dependencies of each service that was used to host my website ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)) remotely:
 
-\includegraphics{assets/images/flowchart.png}
+![Flowchart](assets/images/flowchart.png)
 
 When a user enters the domain name into their browser, a DNS query is sent to Route 53, which acts as the DNS service, resolving the domain name to the next step. Route 53 contains a record that then points the domain to Cloudfront using an alias record. This allows the user to access the website using the custom domain name that was purchased off of Namecheap.
 
@@ -61,5 +48,5 @@ S3 then returns the requested content to Cloudfront then caches the content for 
 
 ## Screenshot of the [website](zhangdaniel62csce412.me) with proof that it is secured
 
-\includegraphics{assets/images/https-proof.png}
+![Screenshot of the website with proof that it is secured](assets/images/https-proof.png)
 
