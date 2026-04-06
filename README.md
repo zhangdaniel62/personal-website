@@ -34,6 +34,14 @@ Together, these  services allowed the website to be securely accessed through a 
 
 The following flow chart shows the order and dependencies of each service that was used to host my website ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)) remotely:
 
+![flowchart](./assets/images/flowchart.png)
+
+When a user enters the domain name into their browser, a DNS query is sent to Route 53, which acts as the DNS service, resolving the domain name to the next step. Route 53 contains a record that then points hte domain to Cloudfront using an alias record. This allows the user to access the website using the custom domain name that was purchased off of Namecheap.
+
+Once the request reaches Cloudfront, the service then handles HTTPS by using the certificate that was provisioned by AWS Certificate Manager (ACM). This ensures that the data between the user and the website is encrypted and secure. The service then checks to see whether the requested data is already cached at an edge location close to the user. If it is cached, the content is returned immediately to the user, improving performance and reducing latency. If the content is not cached, Cloudfront then forwards the request to Amazon S3, where the static content is stored. This includes HTML, CSS, and JavaScript files.
+
+S3 then returns the requested content to Cloudfront then caches the content for future requests and delivers the website back to the user over a secure HTTPS connection.
+
 ---
 
 ## Screenshot of the [website](zhangddaniel62csce412.me) with proof that it is secured
