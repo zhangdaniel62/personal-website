@@ -1,6 +1,6 @@
 # Project 4: Hosting a site with HTTPS and a custom domain
 
-The goal of the following project was to host a static website on the internet using a custom domain and HTTPS. In order to acheive this, multiple services were used, each to accomplish a specific role.
+The goal of the following project was to host a static website on the internet using a custom domain and HTTPS. In order to achieve this, multiple services were used, each to accomplish a specific role.
 
 ---
 
@@ -8,7 +8,7 @@ The goal of the following project was to host a static website on the internet u
 
 ### Namecheap: Domain Registration
 
-Namecheap was used to purchase a domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). This was used to have a human-readable domain name that users couold use to access said website. It provides a readable and memorable address that users can enter in a browser.
+Namecheap was used to purchase a domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). This was used to have a human-readable domain name that users could use to access said website. It provides a readable and memorable address that users can enter in a browser.
 
 ### Amazon S3: Hosting Service
 
@@ -16,7 +16,7 @@ Amazon S3 is a cloud storage service used to host static content such as HTML, C
 
 ### Amazon Route 53: DNS Service
 
-Route 53 is used to route users that visit the domain to the correct AWS resource. This is important as it allows for traffic for the domain to the correct location. In addition, it is used for certificate validation through ACM. It translates the domain name into the approprate Cloudfront distribution, allowing users to access the website using a human-readable URL.
+Route 53 is used to route users that visit the domain to the correct AWS resource. This is important as it allows for traffic for the domain to the correct location. In addition, it is used for certificate validation through ACM. It translates the domain name into the appropriate Cloudfront distribution, allowing users to access the website using a human-readable URL.
 
 ### AWS Certificate Manager (ACM): SSL Certificate
 
@@ -37,4 +37,6 @@ The following flow chart shows the order and dependencies of each service that w
 ---
 
 ## Screenshot of the [website](zhangddaniel62csce412.me) with proof that it is secured
+
+![proof](./assets/images/https-proof.png)
 
