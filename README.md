@@ -24,9 +24,9 @@ ACM was used to provision and deploy a secure HTTPS certificate. It is essential
 
 ### Amazon Cloudfront: CDN + HTTPS Layer
 
-Cloudfront is responsible for distributing the website hosted on S3 globally nad enabling HTTPS using the ACM certificate that was provisioned by ACM. It caches content on edge servers (servers that are closest to the user) to improve latency and the general responsiveness of the website. This includes images, files, and stylesheets. In addition, Cloudfront is required because S3 does not natively support HTTPS for custom domains (such as the one that was purchased off of Namecheap).
+Cloudfront is responsible for distributing the website hosted on S3 globally and enabling HTTPS using the ACM certificate that was provisioned by ACM. It caches content on edge servers (servers that are closest to the user) to improve latency and the general responsiveness of the website. This includes images, files, and stylesheets. In addition, Cloudfront is required because S3 does not natively support HTTPS for custom domains (such as the one that was purchased off of Namecheap).
 
-Together, these  services allowed the website to be securely accessed through a custom domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). The structure used is scalabe and cost-efficient, as it does not require the management of physical servers.
+Together, these  services allowed the website to be securely accessed through a custom domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). The structure used is scalable and cost-efficient, as it does not require the management of physical servers.
 
 ---
 
@@ -36,7 +36,7 @@ The following flow chart shows the order and dependencies of each service that w
 
 ![flowchart](./assets/images/flowchart.png)
 
-When a user enters the domain name into their browser, a DNS query is sent to Route 53, which acts as the DNS service, resolving the domain name to the next step. Route 53 contains a record that then points hte domain to Cloudfront using an alias record. This allows the user to access the website using the custom domain name that was purchased off of Namecheap.
+When a user enters the domain name into their browser, a DNS query is sent to Route 53, which acts as the DNS service, resolving the domain name to the next step. Route 53 contains a record that then points the domain to Cloudfront using an alias record. This allows the user to access the website using the custom domain name that was purchased off of Namecheap.
 
 Once the request reaches Cloudfront, the service then handles HTTPS by using the certificate that was provisioned by AWS Certificate Manager (ACM). This ensures that the data between the user and the website is encrypted and secure. The service then checks to see whether the requested data is already cached at an edge location close to the user. If it is cached, the content is returned immediately to the user, improving performance and reducing latency. If the content is not cached, Cloudfront then forwards the request to Amazon S3, where the static content is stored. This includes HTML, CSS, and JavaScript files.
 
@@ -44,7 +44,7 @@ S3 then returns the requested content to Cloudfront then caches the content for 
 
 ---
 
-## Screenshot of the [website](zhangddaniel62csce412.me) with proof that it is secured
+## Screenshot of the [website](zhangdaniel62csce412.me) with proof that it is secured
 
 ![proof](./assets/images/https-proof.png)
 
