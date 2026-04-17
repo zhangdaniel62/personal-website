@@ -50,6 +50,8 @@ S3 then returns the requested content to Cloudfront then caches the content for 
 
 ![Screenshot of the website with proof that it is secured](assets/images/https-proof.png)
 
+---
+
 # Project 5: Creation of a CI/CD pipeline that automatically updates upon a push
 
 TODO: write  description/quick intro as well as an explanation of everything that was used. Add a system flow diagram from eraser.io.
@@ -57,6 +59,8 @@ TODO: write  description/quick intro as well as an explanation of everything tha
 ## TODO: Some name that explains the reasons that each service was used
 
 TODO: NameCheap, S3, Route 53, Cloudfront, AWS certificate manager (which I think I can just rip from project 4)
+
+---
 
 ## Process of the creation of the CI/CD pipeline
 
