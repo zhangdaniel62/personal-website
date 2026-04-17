@@ -4,8 +4,3 @@ phases:
   pre_build:
     commands:
       - echo Build started pm `date`
-      
-  build:
-    commands:
-      - aws s3 sync . s3://$S3_BUCKET --delete --exclude ".git/*" --exclude "config/buildspec.yml"
-      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
