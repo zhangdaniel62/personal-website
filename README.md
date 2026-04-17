@@ -82,7 +82,7 @@ TODO: Clean this up and make it look and sound better
   - Runtime: Standard
   - Image version: use latest
   - rest are default
-5. for Buildspec, choose "insert build commands", and enter the following as a build command, which will be changed later after the pipeline is fully built:
+5. for Buildspec, choose "insert build commands", and enter the following as a build command, which will be overridden later after the pipeline is fully built:
 `echo "Build has started"`
 ![step 5 image](assets/images/documentation/proj-5-CodeBuild-buildspec.png)
 6. Create the build project
@@ -102,8 +102,20 @@ TODO: Clean this up and make it look and sound better
   - Branches or patterns: main
 ![Step 4 image](assets/images/documentation/proj-5-CodePipeline-webhook.png)
 5. Choose "Other build providers -> AWS CodeBuild" as the build provider, and select the CodeBuild build project made previously. 
-6. Select "Use a buildspec file", and enter the path to reach the buildspec file from your repository.
-7. Add the following environment variables as plaintext:
+6. Select "Insert build commands", and enter the following:
+```sh
+version: 0.2
+
+phases:  
+	pre_build:    
+		commands:      
+			- echo "Pipeline buildspec file ran"  
+	build:    
+		commands:      
+			- aws s3 sync . s3://$S3_BUCKET --delete --exclude ".git/*" --exclude "config/buildspec.yml"      
+			- aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+```
+1. Add the following environment variables as plaintext:
   - Name of S3 bucket hosting the website
   - ID of CloudFront distribution
 8. Ensure that the following are correct:
@@ -121,8 +133,7 @@ TODO: Clean this up and make it look and sound better
 > [!NOTE] 
 > the parameter `DetectChanges` will appear to be false. This is expected, as a custom webhook was created.
 
-12. Edit the build project from CodeBuild, changing the build specifications to "Use a buildspec file"
-![Part 12 image](assets/images/documentation/proj-5-CodeBuild-buildspec-after.png)
+---
 
 ## How to update the website automatically
 
