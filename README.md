@@ -121,6 +121,9 @@ TODO: Clean this up and make it look and sound better
 > [!NOTE] 
 > the parameter `DetectChanges` will appear to be false. This is expected, as a custom webhook was created.
 
+12. Edit the build project from CodeBuild, changing the build specifications to "Use a buildspec file"
+![Part 12 image](assets/images/documentation/proj-5-CodeBuild-buildspec-after.png)
+
 ## How to update the website automatically
 
 TODO: Something something how it is updated via push to the main branch, hopefully does the same if a PR is merged into the main branch?
