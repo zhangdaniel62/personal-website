@@ -50,3 +50,75 @@ S3 then returns the requested content to Cloudfront then caches the content for 
 
 ![Screenshot of the website with proof that it is secured](assets/images/https-proof.png)
 
+# Project 5: Creation of a CI/CD pipeline that automatically updates upon a push
+
+TODO: write  description/quick intro as well as an explanation of everything that was used. Add a system flow diagram from eraser.io.
+
+## TODO: Some name that explains the reasons that each service was used
+
+TODO: NameCheap, S3, Route 53, Cloudfront, AWS certificate manager (which I think I can just rip from project 4)
+
+## Process of the creation of the CI/CD pipeline
+
+TODO: Quick luh description of what was created and how it maps to what I already have 
+
+### Deploying an AWS CodeBuild build project:
+
+TODO: Clean this up and make it look and sound better
+
+1. Go to CodeBuild -> Build projects -> Create build project.
+2. Name your project and select "Default Project" for the project type
+3. Select "No source" as the source, as CodePipeline will provide the source.
+4. Select the following in environment (should be the defaults): 
+  - provisioning model: on-demand
+  - environment image: managed image
+  - compute: EC2
+  - running mode: container
+  - OS: Amazon Linux
+  - Runtime: Standard
+  - Image version: use latest
+  - rest are default
+5. for Buildspec, choose "insert build commands", and enter the following as a build command, which will be changed later after the pipeline is fully built:
+`echo "Build has started"`
+![step 5 image](assets/images/documentation/proj-5-CodeBuild-buildspec.png)
+6. Create the build project
+
+### Deploying CodePipeline:
+
+1. Click on create new pipeline, then build custom pipeline: ![step 1 image](assets/images/documentation/proj-5-CodePipeline-creation.png)
+2. Name the pipeline, and change the execution mode to "Superseded", which overrides a run if a new change is pushed to the website. Keep the following settings:
+  - Create new service role
+  - artifact store: Default location
+  - encryption key: Default AWS Managed Key
+![Step 2 image](assets/images/documentation/proj-5-CodePipeline-pipeline-settings.png)
+3. Select "GitHub (via GitHub App)" as the source provider, and connect a GitHub Connection to CodePipeline. If it isn't created, go ahead and create one. Install an app to connect to the repository as a bot. Choose the correct repository as well as the branch which will have changes tracked. Ensure that "Start your pipeline on push and pull request events." is enabled. ![Step 3 image](assets/images/documentation/proj-5-CodePipeline-source.png)
+4. Add the following webhook event filter to ensure that the pipeline is run only when a change is pushed directly to main or a PR is merged into the main branch:
+  - Event type: Push
+  - Filter type: Branch
+  - Branches or patterns: main
+![Step 4 image](assets/images/documentation/proj-5-CodePipeline-webhook.png)
+5. Choose "Other build providers -> AWS CodeBuild" as the build provider, and select the CodeBuild build project made previously. 
+6. Select "Use a buildspec file", and enter the path to reach the buildspec file from your repository.
+7. Add the following environment variables as plaintext:
+  - Name of S3 bucket hosting the website
+  - ID of CloudFront distribution
+8. Ensure that the following are correct:
+  1. Build type: Single build
+  2. Input artifact contains source artifact
+![Steps 8 through 8 image](assets/images/documentation/proj-5-CodePipeline-build-stage.png)
+
+> [!IMPORTANT]
+> In order to avoid potential issues, it is advised that the region of the pipeline is identical to the region that your S3 bucket is located
+
+9. Skip the addition of a test phase, as it is not needed.
+10. Skip the deploy stage, as it is not needed.
+11. Ensure all information is correct, and create the pipeline.
+
+> [!NOTE] 
+> the parameter `DetectChanges` will appear to be false. This is expected, as a custom webhook was created.
+
+## How to update the website automatically
+
+TODO: Something something how it is updated via push to the main branch, hopefully does the same if a PR is merged into the main branch?
+
+TODO: Add proof (photos) of before and after
