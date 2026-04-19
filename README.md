@@ -97,8 +97,6 @@ A CI/CD pipeline was created using AWS CodePipeline and CodeBuild to automate de
 
 ### Deploying an AWS CodeBuild build project:
 
-TODO: Clean this up and make it look and sound better
-
 1. Go to CodeBuild -> Build projects -> Create build project.
 2. Name your project and select "Default Project" for the project type
 3. Select "No source" as the source, as CodePipeline will provide the source.
@@ -187,20 +185,26 @@ phases:
     ]
 }
 ```
-![Steps 1 and 2 image]()
+![Steps 1 and 2 image](assets/images/documentation/proj-5-S3-policychange.png)
 
 3. Head to CloudFront and enter the distribution that is used for the website
 4. Under the "Security" tab, click on "origin access".  Create a new OAC, and make sure that "sign requests" is on, and the origin type is S3.
-![step 4 image]()
-6. Go to the Origin tab and click on "Create Origin"
-7. Choose the correct origin domain as well as a name for the origin. Change origin access from "public" to "Origin Access Controls". Select the OAC that was created earlier and create the origin.
-![step 6 and 7 image]()
+![step 4 image](assets/images/documentation/proj-5-CloudFront-OAC.png)
+6. Go to the "Distributions" tab, and select the distribution that is used for the website. Click on "Edit" under the "Origins and Origin Groups" section.
+7. Go to the Origin tab and click on "Create Origin"
+8. Choose the correct origin domain as well as a name for the origin. Change origin access from "public" to "Origin Access Controls". Select the OAC that was created earlier and create the origin.
+![step 6 and 7 image](assets/images/documentation/proj-5-CloudFront-origin.png)
 
 
 ---
 
 ## How to update the website automatically
 
-TODO: Something something how it is updated via push to the main branch, hopefully does the same if a PR is merged into the main branch?
+The website is automatically updated through the CI/CD pipeline whenever changes are pushed to the main branch of the GitHub repository. When a commit is pushed (or when a pull request is merged into main), CodePipeline is triggered via a webhook, which pulls the latest code, runs the build process in CodeBuild, and deploys the updated files to the S3 bucket. After deployment, a CloudFront invalidation is performed to ensure that cached content is refreshed and the latest version of the website is served. This allows updates to be reflected on the live site without any manual intervention.
 
-TODO: Add proof (photos) of before and after
+### Screenshot of the website before a change is pushed to GitHub, showing the old content:
+
+![before push](assets/images/documentation/proj-5-before-push.png)
+
+### Screenshot of the website after a change is pushed to GitHub, showing the new content:
+![after push](assets/images/documentation/proj-5-after-push.png)
