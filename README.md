@@ -54,17 +54,46 @@ S3 then returns the requested content to Cloudfront then caches the content for 
 
 # Project 5: Creation of a CI/CD pipeline that automatically updates upon a push
 
-TODO: write  description/quick intro as well as an explanation of everything that was used. Add a system flow diagram from eraser.io.
+TODO: write a description/quick intro as well as an explanation of everything that was used. Add a system flow diagram from eraser.io.
 
-## TODO: Some name that explains the reasons that each service was used
 
-TODO: NameCheap, S3, Route 53, Cloudfront, AWS certificate manager (which I think I can just rip from project 4)
+## Services Used
+
+### Namecheap: Domain Registration
+
+Namecheap was used to purchase a domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). This was used to have a human-readable domain name that users could use to access said website. It provides a readable and memorable address that users can enter in a browser.
+
+### Amazon S3: Hosting Service
+
+Amazon S3 is a cloud storage service used to host static content such as HTML, CSS, and JavaScript files. It acts as a simple web server for static content. The direct endpoint to the S3 bucket was hidden, and the website is only accessible through the Cloudfront distribution. This is done to ensure that all traffic to the website goes through Cloudfront, which provides HTTPS and caching.
+
+### Amazon Route 53: DNS Service
+
+Route 53 is used to route users that visit the domain to the correct AWS resource. This is important as it allows for traffic for the domain to the correct location. In addition, it is used for certificate validation through ACM. It translates the domain name into the appropriate Cloudfront distribution, allowing users to access the website using a human-readable URL.
+
+### AWS Certificate Manager (ACM): SSL Certificate
+
+ACM was used to provision and deploy a secure HTTPS certificate. It is essential to convert the website from HTTP to HTTPS, which in essence encrypts the data between the user and the website. 
+
+### Amazon Cloudfront: CDN + HTTPS Layer
+
+Cloudfront is responsible for distributing the website hosted on S3 globally and enabling HTTPS using the ACM certificate that was provisioned by ACM. It caches content on edge servers (servers that are closest to the user) to improve latency and the general responsiveness of the website. This includes images, files, and stylesheets. In addition, Cloudfront is required because S3 does not natively support HTTPS for custom domains (such as the one that was purchased off of Namecheap). An origin access identity (OAI) was also created to restrict access to the S3 bucket, ensuring that all traffic goes through Cloudfront.
+
+### AWS CodeBuild: Build Service
+
+CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages that are ready to deploy. It was used to build the website and prepare it for deployment. In this case, it was used to sync the local files to the S3 bucket and create an invalidation for the Cloudfront distribution to ensure that the latest changes are reflected on the website.
+
+### AWS CodePipeline: CI/CD Service
+
+CodePipeline is a fully managed continuous integration and continuous delivery (CI/CD) service that helps automate the build, test, and deploy phases of the release process. It was used to create a pipeline that automatically updates the website whenever a change is pushed to the main branch of the GitHub repository. The pipeline is triggered by a webhook from GitHub, which starts the build process in CodeBuild if a change is pushed. Once the build is complete, the changes are deployed to S3 and Cloudfront is flushed of its cache to reflect the latest changes on the website.
+
+Together, these services allowed the website to be securely accessed through a custom domain ([zhangdaniel62csce412.me](zhangdaniel62csce412.me)). The structure used is scalable and cost-efficient, as it does not require the management of physical servers.
 
 ---
 
 ## Process of the creation of the CI/CD pipeline
 
-TODO: Quick luh description of what was created and how it maps to what I already have 
+A CI/CD pipeline was created using AWS CodePipeline and CodeBuild to automate deployment of the static website. The pipeline pulls source code from a GitHub repository, runs a build step defined in a buildspec file, and deploys the updated files to an S3 bucket, with CloudFront invalidation to reflect changes immediately. The existing architecture from Project 4 (S3, CloudFront, Route 53, ACM) was extended by making the S3 bucket private and configuring CloudFront with Origin Access Control (OAC) so that content is only accessible through the domain. This allows any updates pushed to GitHub to automatically propagate to the live website while maintaining secure access.
 
 ### Deploying an AWS CodeBuild build project:
 
@@ -115,7 +144,7 @@ phases:
 			- aws s3 sync . s3://$S3_BUCKET --delete --exclude ".git/*" --exclude "config/buildspec.yml"      
 			- aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
 ```
-1. Add the following environment variables as plaintext:
+7. Add the following environment variables as plaintext:
   - Name of S3 bucket hosting the website
   - ID of CloudFront distribution
 8. Ensure that the following are correct:
@@ -132,6 +161,10 @@ phases:
 
 > [!NOTE] 
 > the parameter `DetectChanges` will appear to be false. This is expected, as a custom webhook was created.
+
+### Edits to S3 and CloudFront:
+
+
 
 ---
 
