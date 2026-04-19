@@ -164,6 +164,30 @@ phases:
 
 ### Edits to S3 and CloudFront:
 
+1. Enable Block public access (bucket settings) in S3 under permissions
+2. Edit the bucket policy such that CloudFront is the only service allowed to directly access the S3 bucket and replace it with
+```sh
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowCloudFrontAccess",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::www.zhangdaniel62csce412.me/*",
+            "Condition": {
+                "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::315608487286:distribution/ENKM3D1VRMFYM"
+                }
+            }
+        }
+    ]
+}
+```
+![Steps 1 and 2 image]()
 
 
 ---
