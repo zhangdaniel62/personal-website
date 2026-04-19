@@ -164,7 +164,7 @@ phases:
 
 ### Edits to S3 and CloudFront:
 
-1. Enable Block public access (bucket settings) in S3 under permissions
+1. Enable Block public access (bucket settings) in S3 under permissions. All public access should be blocked.
 2. Edit the bucket policy such that CloudFront is the only service allowed to directly access the S3 bucket and replace it with
 ```sh
 {
@@ -188,6 +188,13 @@ phases:
 }
 ```
 ![Steps 1 and 2 image]()
+
+3. Head to CloudFront and enter the distribution that is used for the website
+4. Under the "Security" tab, click on "origin access".  Create a new OAC, and make sure that "sign requests" is on, and the origin type is S3.
+![step 4 image]()
+6. Go to the Origin tab and click on "Create Origin"
+7. Choose the correct origin domain as well as a name for the origin. Change origin access from "public" to "Origin Access Controls". Select the OAC that was created earlier and create the origin.
+![step 6 and 7 image]()
 
 
 ---
