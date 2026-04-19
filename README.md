@@ -1,4 +1,4 @@
-![Logo](assets/images/logo.png)
+![Logo](images/logo.png)
 
 # Project 4: Hosting a site with HTTPS and a custom domain
 
